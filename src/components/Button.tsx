@@ -16,16 +16,35 @@ type Props = {
 function Button(props: Props) {
   const { color, outline, loading, disabled, children, className, onClick, ...others } = props;
 
-  const classnames = cn(className, 'btn', {
-    'btn-primary': !color,
-    'btn-secondary': color === 'secondary',
-    'btn-success': color === 'success',
-    'btn-info': color === 'info',
-    'btn-warning': color === 'warning',
-    'btn-danger': color === 'danger',
-    'btn-outline': outline,
-    'btn-disabled': disabled,
-    'btn-loading': loading,
+  const classnames = cn(className, 'py-1.5 px-3 rounded border-2', {
+    // Primary
+    'bg-primary text-light border-primary': !color && !outline,
+    'hover:bg-primary-600 active:bg-primary-700': !color && !loading && !disabled && !outline,
+    'bg-light font-bold text-primary': !color && outline,
+    // Secondary
+    'bg-secondary text-light border-secondary': color === 'secondary' && !outline,
+    'hover:bg-secondary-600 active:bg-secondary-700': color === 'secondary' && !loading && !disabled && !outline,
+    'bg-light font-bold text-secondary': color === 'secondary' && outline,
+    // Success
+    'bg-success text-light border-success': color === 'success' && !outline,
+    'hover:bg-success-600 active:bg-success-700': color === 'success' && !loading && !disabled && !outline,
+    'bg-light font-bold text-success': color === 'success' && outline,
+    // Info
+    'bg-info text-light border-info': color === 'info' && !outline,
+    'hover:bg-info-600 active:bg-info-700': color === 'info' && !loading && !disabled && !outline,
+    'bg-light font-bold text-info': color === 'info' && outline,
+    // Warning
+    'bg-warning text-light border-warning': color === 'warning' && !outline,
+    'hover:bg-warning-600 active:bg-warning-700': color === 'warning' && !loading && !disabled && !outline,
+    'bg-light font-bold text-warning': color === 'warning' && outline,
+    // Danger
+    'bg-danger text-light border-danger': color === 'danger' && !outline,
+    'hover:bg-danger-600 active:bg-danger-700': color === 'danger' && !loading && !disabled && !outline,
+    'bg-light font-bold text-danger': color === 'danger' && outline,
+    // General
+    'hover:bg-light-600 active:bg-light-700': outline && !disabled && !loading,
+    'opacity-40 cursor-default': disabled,
+    'cursor-default': loading,
   });
 
   const handleClick = useCallback(
