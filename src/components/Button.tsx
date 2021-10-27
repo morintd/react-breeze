@@ -20,27 +20,27 @@ function Button(props: Props) {
     // Primary
     'bg-primary text-light border-primary': !color && !outline,
     'hover:bg-primary-600 active:bg-primary-700': !color && !loading && !disabled && !outline,
-    'bg-light font-bold text-primary': !color && outline,
+    'bg-light font-bold text-primary border-primary': !color && outline,
     // Secondary
     'bg-secondary text-light border-secondary': color === 'secondary' && !outline,
     'hover:bg-secondary-600 active:bg-secondary-700': color === 'secondary' && !loading && !disabled && !outline,
-    'bg-light font-bold text-secondary': color === 'secondary' && outline,
+    'bg-light font-bold text-secondary border-secondary': color === 'secondary' && outline,
     // Success
     'bg-success text-light border-success': color === 'success' && !outline,
     'hover:bg-success-600 active:bg-success-700': color === 'success' && !loading && !disabled && !outline,
-    'bg-light font-bold text-success': color === 'success' && outline,
+    'bg-light font-bold text-success border-success': color === 'success' && outline,
     // Info
     'bg-info text-light border-info': color === 'info' && !outline,
     'hover:bg-info-600 active:bg-info-700': color === 'info' && !loading && !disabled && !outline,
-    'bg-light font-bold text-info': color === 'info' && outline,
+    'bg-light font-bold text-info border-info': color === 'info' && outline,
     // Warning
     'bg-warning text-light border-warning': color === 'warning' && !outline,
     'hover:bg-warning-600 active:bg-warning-700': color === 'warning' && !loading && !disabled && !outline,
-    'bg-light font-bold text-warning': color === 'warning' && outline,
+    'bg-light font-bold text-warning border-warning': color === 'warning' && outline,
     // Danger
     'bg-danger text-light border-danger': color === 'danger' && !outline,
     'hover:bg-danger-600 active:bg-danger-700': color === 'danger' && !loading && !disabled && !outline,
-    'bg-light font-bold text-danger': color === 'danger' && outline,
+    'bg-light font-bold text-danger border-danger': color === 'danger' && outline,
     // General
     'hover:bg-light-600 active:bg-light-700': outline && !disabled && !loading,
     'opacity-40 cursor-default': disabled,
