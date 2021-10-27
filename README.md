@@ -1,4 +1,4 @@
-# ts-lib-template
+# react-breeze
 
 A component library made with TailWind.
 
