@@ -21,7 +21,7 @@ function Alert(props: Props) {
     'opacity-0': !visible,
   });
 
-  return <div {...others} className={classnames} />;
+  return <div {...others} role="alert" className={classnames} />;
 }
 
 export default Alert;

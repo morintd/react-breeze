@@ -22,6 +22,7 @@ const Input = forwardRef((props: Props, ref: React.ForwardedRef<HTMLInputElement
   const classnames = cn(className, 'outline-none border border-dark rounded py-1.5 px-3 focus:border-primary', {
     'border-danger': error,
   });
+
   return <input ref={ref} {...others} className={classnames} onKeyPress={handleKeyPress} />;
 });
 

@@ -1,9 +1,11 @@
 import React, { DetailedHTMLProps, HTMLAttributes, ReactNode } from 'react';
 import cn from 'classnames';
 
+import { HeadingLevel } from '../types';
+
 export type Props = {
   children: ReactNode;
-  as?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+  as?: HeadingLevel;
 } & DetailedHTMLProps<HTMLAttributes<HTMLHeadingElement>, HTMLHeadingElement>;
 
 function Title(props: Props) {
@@ -13,9 +15,9 @@ function Title(props: Props) {
     'text-4xl': as === 'h1',
     'text-3xl': as === 'h2',
     'text-2xl': as === 'h3',
-    'text-1xl': as === 'h4',
-    'text-xl': as === 'h5',
-    'text-lg': as === 'h6',
+    'text-xl': as === 'h4',
+    'text-lg': as === 'h5',
+    'text-base': as === 'h6',
   });
 
   return (

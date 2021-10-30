@@ -10,6 +10,7 @@ function Spinner(props: Props) {
   return (
     <div className={classnames}>
       <svg
+        role="status"
         className="animate-spin h-5 w-5 text-white inline"
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
