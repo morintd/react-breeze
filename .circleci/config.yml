@@ -59,7 +59,7 @@ jobs:
       - attach_workspace:
           at: ~/repo
       - run: yarn build
-      - run: cd packages/react-breeze && npx semantic-release
+      - run: npx semantic-release
 workflows:
   master_deploy:
     jobs:
