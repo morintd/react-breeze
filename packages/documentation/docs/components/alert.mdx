@@ -1,0 +1,56 @@
+---
+sidebar_position: 1
+---
+
+# Alert
+
+An alert is used to give information.
+
+import { Alert, Title } from 'react-breeze';
+
+<Title as="h3">Color</Title>
+
+<Alert className="mb-2">Alert (Primary)</Alert>
+<Alert className="mb-2" color="secondary">Alert (Secondary)</Alert>
+<Alert className="mb-2" color="success">Alert (Success)</Alert>
+<Alert className="mb-2" color="info">Alert (Info)</Alert>
+<Alert className="mb-2" color="warning">Alert (Warning)</Alert>
+<Alert className="mb-2" color="danger">Alert (Danger)</Alert>
+
+
+```jsx
+import { Alert } from 'react-breeze';
+
+<Alert>Alert (Primary)</Alert>
+<Alert color="secondary">Alert (Primary)</Alert>
+<Alert color="success">Alert (Primary)</Alert>
+<Alert color="info">Alert (Primary)</Alert>
+<Alert color="warning">Alert (Primary)</Alert>
+<Alert color="danger">Alert (Primary)</Alert>
+```
+
+<Title as="h3">Visibility</Title>
+
+An alert can be displayed and hidden thanks to a `visible` property. It takes as much space when invisible:
+
+<Alert className="mb-2">Alert (Primary)</Alert>
+<Alert className="mb-2" color="secondary" visible={false}>Alert (Secondary)</Alert>
+<Alert className="mb-2" color="success">Alert (Success)</Alert>
+
+
+```jsx
+import { Alert } from 'react-breeze';
+
+<Alert>Alert (Primary)</Alert>
+<Alert color="secondary" visible={false}>Alert (Secondary)</Alert>
+<Alert color="success">Alert (Success)</Alert>
+```
+
+**Properties**
+
+Alert takes the same properties as a `div`, but can also be given:
+
+| Name    | Type | Default | Description |
+|---------|------|---------|-------------|
+| color   | `undefined` \| `'secondary'` \| `'success'` \| `'info'` \| `'warning'` \| `'danger'` | undefined | Set color |
+| visible | boolean | `true` | Display / hide |

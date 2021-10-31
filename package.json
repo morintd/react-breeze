@@ -4,6 +4,7 @@
   "workspaces": [
     "packages/**"
   ],
+  "repository": "https://github.com/morintd/react-breeze",
   "keywords": [],
   "scripts": {
     "build": "yarn workspace react-breeze build",

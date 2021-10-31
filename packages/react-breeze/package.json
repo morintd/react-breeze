@@ -6,6 +6,7 @@
   "typings": "build/main/index.d.ts",
   "module": "build/module/index.js",
   "repository": "https://github.com/morintd/react-breeze",
+  "homepage": "http://morintd.github.io/react-breeze",
   "license": "MIT",
   "keywords": [],
   "scripts": {
