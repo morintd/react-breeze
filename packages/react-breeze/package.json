@@ -52,15 +52,6 @@
     "ts-jest": "27.0.7",
     "typescript": "4.4.4"
   },
-  "files": [
-    "build/main",
-    "build/module",
-    "!**/*.spec.*",
-    "!**/*.json",
-    "CHANGELOG.md",
-    "LICENSE",
-    "README.md"
-  ],
   "dependencies": {
     "classnames": "^2.3.1",
     "react": "17.0.2",
