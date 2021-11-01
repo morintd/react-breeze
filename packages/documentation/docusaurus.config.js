@@ -9,7 +9,7 @@ const path = require('path');
 const config = {
   title: 'react-breeze',
   tagline: 'Easily create prototypes using React & TailWind',
-  url: 'https://morintd.github.io/react-breeze',
+  url: 'https://morintd.github.io',
   baseUrl: '/react-breeze/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',

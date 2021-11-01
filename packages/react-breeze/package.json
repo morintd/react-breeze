@@ -8,7 +8,7 @@
   "repository": "https://github.com/morintd/react-breeze",
   "homepage": "http://morintd.github.io/react-breeze",
   "license": "MIT",
-  "keywords": [],
+  "keywords": ["react", "tailwind", "component"],
   "scripts": {
     "build": "yarn build:main && yarn build:module",
     "build:main": "tsc -p tsconfig.json",
