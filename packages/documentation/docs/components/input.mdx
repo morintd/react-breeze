@@ -1,0 +1,95 @@
+---
+sidebar_position: 4
+---
+
+# Input
+
+An input is used to easily get inputs from the user.
+
+import { useState, useRef } from 'react';
+import { Input, Alert, Title, Button } from 'react-breeze';
+
+<Title as="h3">Default</Title>
+
+Input is used the same way as the default `input`, but is stylized:
+
+export const InputExample = () => {
+  const [text, setText] = useState('');
+  return (
+    <div>
+      <Input placeholder="Placeholder..." onChange={(e) => setText(e.target.value)} />
+      <p className="mb-2">(Text: {text})</p>
+    </div>
+  );
+};
+
+<InputExample />
+
+```jsx
+import { useState } from 'react';
+import { Input } from 'react-breeze';
+
+const [text, setText] = useState('');
+<Input placeholder="Placeholder..." onChange={(e) => setText(e.target.value)} />
+<p>(Text: {text})</p>
+```
+
+<Title as="h3">Error</Title>
+
+Input can be given an `error` to be displayed:
+
+<Input className="mb-2" error="some-error" onChange={(e) => setText(e.target.value)} />
+
+```jsx
+import { Input } from 'react-breeze';
+
+<Input error="some-error" />;
+```
+
+<Title as="h3">onEnter</Title>
+
+Input can be given an `onEnter` event:
+
+<Input className="mb-2" onEnter={() => alert('Enter key pressed')} />
+
+```jsx
+import { Input } from 'react-breeze';
+
+<Input onEnter={() => alert('Enter key pressed')} />;
+```
+
+<Title as="h3">Ref</Title>
+
+Under the hood, Input uses `forwardRef`, which allows you to do:
+
+export const InputRefExample = () => {
+  const ref = useRef(null);
+  return (
+    <div>
+      <Input ref={ref} />
+      <Button className="mb-2" onClick={() => ref.current.focus()}>
+        Focus
+      </Button>
+    </div>
+  );
+};
+
+<InputRefExample />
+
+```jsx
+import { useRef } from 'react';
+import { Input } from 'react-breeze';
+
+const ref = useRef(null);
+<Input ref={ref} />
+<Button onClick={() => ref.current.focus()}>Focus</Button>
+```
+
+**Properties**
+
+Input takes the same properties as an `input`, but can also be given:
+
+| Name    | Type                      | Default     | Description                       |
+| ------- | ------------------------- | ----------- | --------------------------------- |
+| error   | `undefined` \| `string`   | `undefined` | Display error                     |
+| onEnter | `undefined` \| `Function` | `undefined` | Trigger when user press Enter key |

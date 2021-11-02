@@ -1,0 +1,45 @@
+---
+sidebar_position: 3
+---
+
+# Card
+
+A Card organize content.
+
+import { Card, Title } from 'react-breeze';
+
+<Card className="mb-2">
+  <p>Content</p>
+</Card>
+
+```jsx
+import { Card } from 'react-breeze';
+
+<Card>
+  <p>Content</p>
+</Card>;
+```
+
+<Title as="h3">Title</Title>
+
+A Card can be given a defined title through `Card.Title`:
+
+<Card className="mb-2">
+  <Card.Title>Title</Card.Title>
+  <p>Content</p>
+</Card>
+
+```jsx
+import { Card } from 'react-breeze';
+
+<Card>
+  <Card.Title>Title</Card.Title>
+  <p>Content</p>
+</Card>;
+```
+
+**Properties**
+
+Card takes the same properties as a `div`.
+
+`Card.Title` takes the same properties as a <a href="/docs/components/title">Title</a>.
