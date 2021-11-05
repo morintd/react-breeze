@@ -38,12 +38,12 @@ const [text, setText] = useState('');
 
 Input can be given an `error` to be displayed:
 
-<Input className="mb-2" error="some-error" onChange={(e) => setText(e.target.value)} />
+<Input className="mb-2" error onChange={(e) => setText(e.target.value)} />
 
 ```jsx
 import { Input } from 'react-breeze';
 
-<Input error="some-error" />;
+<Input error />;
 ```
 
 <Title as="h3">onEnter</Title>
@@ -91,5 +91,5 @@ Input takes the same properties as an `input`, but can also be given:
 
 | Name    | Type                      | Default     | Description                       |
 | ------- | ------------------------- | ----------- | --------------------------------- |
-| error   | `undefined` \| `string`   | `undefined` | Display error                     |
+| error   | `undefined` \| `boolean`  | `false`     | Display error                     |
 | onEnter | `undefined` \| `Function` | `undefined` | Trigger when user press Enter key |

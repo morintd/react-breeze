@@ -2,7 +2,7 @@ import React, { DetailedHTMLProps, forwardRef, InputHTMLAttributes, KeyboardEven
 import cn from 'classnames';
 
 type Props = {
-  error?: string;
+  error?: boolean;
   onEnter?: () => void;
 } & DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>;
 
