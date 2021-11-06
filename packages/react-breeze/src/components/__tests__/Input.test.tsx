@@ -27,7 +27,7 @@ describe('Input', () => {
     render(
       <>
         <label htmlFor="input">mock-label</label>
-        <Input error="mock-error" id="input" />
+        <Input error id="input" />
       </>,
     );
 
@@ -40,7 +40,7 @@ describe('Input', () => {
     render(
       <>
         <label htmlFor="input">mock-label</label>
-        <Input onEnter={mockOnEnter} error="mock-error" id="input" />
+        <Input onEnter={mockOnEnter} id="input" />
       </>,
     );
 
