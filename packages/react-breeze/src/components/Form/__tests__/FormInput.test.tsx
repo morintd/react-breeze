@@ -2,15 +2,15 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import Input from '../Input';
+import Form from '../Form';
 
-describe('Input', () => {
+describe('Form.Input', () => {
   test('Should trigger event when text change', () => {
     let result = '';
     render(
       <>
         <label htmlFor="input">mock-label</label>
-        <Input
+        <Form.Input
           id="input"
           onChange={(e) => {
             result = e.target.value;
@@ -27,7 +27,7 @@ describe('Input', () => {
     render(
       <>
         <label htmlFor="input">mock-label</label>
-        <Input error="mock-error" id="input" />
+        <Form.Input error id="input" />
       </>,
     );
 
@@ -40,7 +40,7 @@ describe('Input', () => {
     render(
       <>
         <label htmlFor="input">mock-label</label>
-        <Input onEnter={mockOnEnter} error="mock-error" id="input" />
+        <Form.Input onEnter={mockOnEnter} id="input" />
       </>,
     );
 

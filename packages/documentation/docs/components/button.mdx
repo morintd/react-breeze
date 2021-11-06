@@ -74,36 +74,65 @@ import { Button } from 'react-breeze';
 
 <Title as="h3">Loading</Title>
 
-Buttons can display a loader, useful when working with async actions.
+Buttons can display a loader, useful when working with async actions (default or outline).
 
-<Button loading className="mb-2 mr-1">
-  Button (Primary)
-</Button>
-<Button loading className="mb-2 mr-1" color="secondary">
-  Button (Secondary)
-</Button>
-<Button loading className="mb-2 mr-1" color="success">
-  Button (Success)
-</Button>
-<Button loading className="mb-2 mr-1" color="info">
-  Button (Info)
-</Button>
-<Button loading className="mb-2 mr-1" color="warning">
-  Button (Warning)
-</Button>
-<Button loading className="mb-2 mr-1" color="danger">
-  Button (Danger)
-</Button>
+<div>
+  <Button loading className="mb-2 mr-1">
+    Button (Primary)
+  </Button>
+  <Button loading className="mb-2 mr-1" color="secondary">
+    Button (Secondary)
+  </Button>
+  <Button loading className="mb-2 mr-1" color="success">
+    Button (Success)
+  </Button>
+  <Button loading className="mb-2 mr-1" color="info">
+    Button (Info)
+  </Button>
+  <Button loading className="mb-2 mr-1" color="warning">
+    Button (Warning)
+  </Button>
+  <Button loading className="mb-2 mr-1" color="danger">
+    Button (Danger)
+  </Button>
+</div>
+<div>
+  <Button outline loading className="mb-2 mr-1">
+    Button (Primary)
+  </Button>
+  <Button outline loading className="mb-2 mr-1" color="secondary">
+    Button (Secondary)
+  </Button>
+  <Button outline loading className="mb-2 mr-1" color="success">
+    Button (Success)
+  </Button>
+  <Button outline loading className="mb-2 mr-1" color="info">
+    Button (Info)
+  </Button>
+  <Button outline loading className="mb-2 mr-1" color="warning">
+    Button (Warning)
+  </Button>
+  <Button outline loading className="mb-2 mr-1" color="danger">
+    Button (Danger)
+  </Button>
+</div>
 
 ```jsx
 import { Button } from 'react-breeze';
 
 <Button loading>Button (Primary)</Button>
-<Button loading color="secondary">Button (Primary)</Button>
-<Button loading color="success">Button (Primary)</Button>
-<Button loading color="info">Button (Primary)</Button>
-<Button loading color="warning">Button (Primary)</Button>
-<Button loading color="danger">Button (Primary)</Button>
+<Button loading color="secondary">Button (Secondary)</Button>
+<Button loading color="success">Button (Success)</Button>
+<Button loading color="info">Button (Info)</Button>
+<Button loading color="warning">Button (Warning)</Button>
+<Button loading color="danger">Button (Danger)</Button>
+
+<Button outline loading>Button (Primary)</Button>
+<Button outline loading color="secondary">Button (Secondary)</Button>
+<Button outline loading color="success">Button (Success)</Button>
+<Button outline loading color="info">Button (Info)</Button>
+<Button outline loading color="warning">Button (Warning)</Button>
+<Button outline loading color="danger">Button (Danger)</Button>
 ```
 
 <Title as="h3">Disabled</Title>

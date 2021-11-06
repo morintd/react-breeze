@@ -1,0 +1,117 @@
+---
+sidebar_position: 5
+---
+
+# Form
+
+Form is used to handle forms, inputs and labels.
+
+import { useState, useRef } from 'react';
+import { Form, Alert, Title, Button } from 'react-breeze';
+
+export const InputExample = () => {
+  const [text, setText] = useState('');
+  return (
+    <div>
+      <Form.Input placeholder="Placeholder..." onChange={(e) => setText(e.target.value)} />
+      <p className="mb-2">(Text: {text})</p>
+    </div>
+  );
+};
+
+<InputExample />
+
+```jsx
+import { useState } from 'react';
+import { Form } from 'react-breeze';
+
+const [text, setText] = useState('');
+<Form.Input placeholder="Placeholder..." onChange={(e) => setText(e.target.value)} />
+<p>(Text: {text})</p>
+```
+
+<Title as="h3">Input</Title>
+
+Input is used the same way as the default `input`, but is stylized:
+
+<Title as="h4">Error</Title>
+
+Input can be given an `error` to be displayed:
+
+<Form.Input className="mb-2" error onChange={(e) => setText(e.target.value)} />
+
+```jsx
+import { Form } from 'react-breeze';
+
+<Form.Input error />;
+```
+
+<Title as="h4">onEnter</Title>
+
+Input can be given an `onEnter` event:
+
+<Form.Input className="mb-2" onEnter={() => alert('Enter key pressed')} />
+
+```jsx
+import { Form } from 'react-breeze';
+
+<Form.Input onEnter={() => alert('Enter key pressed')} />;
+```
+
+<Title as="h4">Ref</Title>
+
+Under the hood, Input uses `forwardRef`, which allows you to do:
+
+export const InputRefExample = () => {
+  const ref = useRef(null);
+  return (
+    <div>
+      <Form.Input ref={ref} />
+      <Button className="mb-2" onClick={() => ref.current.focus()}>
+        Focus
+      </Button>
+    </div>
+  );
+};
+
+<InputRefExample />
+
+```jsx
+import { useRef } from 'react';
+import { Form } from 'react-breeze';
+
+const ref = useRef(null);
+<Form.Input ref={ref} />
+<Button onClick={() => ref.current.focus()}>Focus</Button>
+```
+<Title as="h3">Label</Title>
+
+Label is used to display a `label`, with a corrected style.
+
+<Title as="h3">Group</Title>
+
+Group is used to set ids for label & linked input.
+
+**Properties**
+
+<Title as="h4">Input</Title>
+
+Input takes the same properties as an, but can also be given:
+
+| Name    | Type                      | Default     | Description                       |
+| ------- | ------------------------- | ----------- | --------------------------------- |
+| error   | `undefined` \| `boolean`  | `false`     | Display error                     |
+| onEnter | `undefined` \| `Function` | `undefined` | Trigger when user press Enter key |
+
+<Title as="h4">Label</Title>
+
+Input takes the same properties as a `label`.
+
+<Title as="h4">Group</Title>
+
+Group takes the following properties:
+
+| Name     | Type                     | Default     | Description                          |
+| -------- | ------------------------ | ----------- | ------------------------------------ |
+| id       | string                   | `undefined` | Assign `id` & `for` to label & input |
+| children | Component                | `undefined` | Components to be linked together     |

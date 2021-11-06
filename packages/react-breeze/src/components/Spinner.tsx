@@ -1,21 +1,30 @@
 import React, { DetailedHTMLProps, HTMLAttributes } from 'react';
 import cn from 'classnames';
 
-type Props = DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
+import { PrimaryColorVariant, BonusColorVariants, ColorVariants } from '../types';
+
+type Props = {
+  color?: PrimaryColorVariant | ColorVariants | BonusColorVariants;
+} & DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
 
 function Spinner(props: Props) {
-  const { className } = props;
+  const { className, color, ...others } = props;
   const classnames = cn(className, 'h-6 w-6 flex items-center content-center');
 
+  const svgClassnames = cn('animate-spin h-5 w-5 inline', {
+    'text-light': !color,
+    'text-dark': color === 'dark',
+    'text-primary': color === 'primary',
+    'text-secondary': color === 'secondary',
+    'text-success': color === 'success',
+    'text-info': color === 'info',
+    'text-warning': color === 'warning',
+    'text-danger': color === 'danger',
+  });
+
   return (
-    <div className={classnames}>
-      <svg
-        role="status"
-        className="animate-spin h-5 w-5 text-white inline"
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 25 25"
-      >
+    <div {...others} className={classnames}>
+      <svg role="status" className={svgClassnames} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 25 25">
         <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
         <path
           className="opacity-75"

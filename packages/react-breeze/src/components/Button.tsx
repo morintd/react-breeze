@@ -57,7 +57,9 @@ function Button(props: Props) {
   return (
     <button {...others} onClick={handleClick} className={classnames}>
       <div className="relative">
-        {loading && <Spinner className="absolute top-0 left-0 right-0 mx-auto" />}
+        {loading && (
+          <Spinner color={outline ? color || 'primary' : 'light'} className="absolute top-0 left-0 right-0 mx-auto" />
+        )}
         <div className={cn({ 'opacity-0': loading })}>{children}</div>
       </div>
     </button>
