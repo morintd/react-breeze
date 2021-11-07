@@ -9,7 +9,14 @@ type Props = {
 } & DetailedHTMLProps<HTMLAttributes<HTMLFormElement>, HTMLFormElement>;
 
 function Form(props: Props) {
-  return <form {...props} />;
+  return (
+    <form
+      onSubmit={(e) => {
+        e.preventDefault();
+      }}
+      {...props}
+    />
+  );
 }
 
 Form.Group = FormGroup;
