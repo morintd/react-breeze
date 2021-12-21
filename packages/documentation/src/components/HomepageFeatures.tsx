@@ -31,7 +31,7 @@ const FeatureList: FeatureItem[] = [
       <>
         Use and customize the wide range of available components now! Working with prototypes ? You will find everything you
         need,{' '}
-        <a className="underline" href="/docs/components/alert">
+        <a className="underline" href="/react-breeze/docs/components/alert">
           have a look
         </a>
         .
