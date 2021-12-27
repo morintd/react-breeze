@@ -6,7 +6,7 @@ type Props = {
   onEnter?: () => void;
 } & DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>;
 
-const FormInput = forwardRef((props: Props, ref: React.ForwardedRef<HTMLInputElement>) => {
+const FormInput = (props: Props, ref: React.ForwardedRef<HTMLInputElement>) => {
   const { error, className, onKeyPress, onEnter, ...others } = props;
 
   const handleKeyPress = useCallback(
@@ -24,6 +24,6 @@ const FormInput = forwardRef((props: Props, ref: React.ForwardedRef<HTMLInputEle
   });
 
   return <input ref={ref} {...others} className={classnames} onKeyPress={handleKeyPress} />;
-});
+};
 
-export default FormInput;
+export default forwardRef(FormInput);
