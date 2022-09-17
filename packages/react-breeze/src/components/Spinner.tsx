@@ -1,25 +1,18 @@
 import React, { DetailedHTMLProps, HTMLAttributes } from 'react';
 import cn from 'classnames';
 
-import { PrimaryColorVariant, BonusColorVariants, ColorVariants } from '../types';
-
 type Props = {
-  color?: PrimaryColorVariant | ColorVariants | BonusColorVariants;
+  color: string;
+  inverted?: boolean;
 } & DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
 
 function Spinner(props: Props) {
-  const { className, color, ...others } = props;
+  const { className, color, inverted, ...others } = props;
   const classnames = cn(className, 'h-6 w-6 flex items-center content-center');
 
-  const svgClassnames = cn('animate-spin h-5 w-5 inline', {
-    'text-light': !color,
-    'text-dark': color === 'dark',
-    'text-primary': color === 'primary',
-    'text-secondary': color === 'secondary',
-    'text-success': color === 'success',
-    'text-info': color === 'info',
-    'text-warning': color === 'warning',
-    'text-danger': color === 'danger',
+  const svgClassnames = cn(`animate-spin h-5 w-5 inline `, {
+    [`text-${color}-500`]: !inverted,
+    [`text-${color}-inverted`]: inverted,
   });
 
   return (

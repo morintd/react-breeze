@@ -5,7 +5,7 @@ import Spinner from '../Spinner';
 
 describe('Spinner', () => {
   test('Should display a spinner', () => {
-    render(<Spinner />);
+    render(<Spinner color="mock-color" />);
     expect(screen.getByRole('status')).toBeInTheDocument();
   });
 });

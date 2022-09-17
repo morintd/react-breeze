@@ -1,5 +1,5 @@
 {
-  "name": "documentation",
+  "name": "documentation-2",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -15,27 +15,23 @@
     "typecheck": "tsc"
   },
   "dependencies": {
-    "@docusaurus/core": "2.0.0-beta.20",
-    "@docusaurus/preset-classic": "2.0.0-beta.20",
-    "@mdx-js/react": "2.1.2",
-    "@svgr/webpack": "6.2.1",
-    "clsx": "1.2.0",
-    "file-loader": "6.2.0",
+    "@docusaurus/core": "2.1.0",
+    "@docusaurus/preset-classic": "2.1.0",
+    "@mdx-js/react": "1.6.22",
+    "autoprefixer": "10.4.11",
+    "clsx": "1.2.1",
+    "postcss": "8.4.16",
+    "postcss-import": "15.0.0",
+    "postcss-preset-env": "7.8.2",
     "prism-react-renderer": "1.3.5",
-    "react": "18.2.0",
-    "react-breeze": "1.0.0",
-    "react-dom": "18.2.0",
-    "url-loader": "4.1.1"
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "tailwindcss": "3.1.8"
   },
   "devDependencies": {
-    "@docusaurus/module-type-aliases": "2.0.0-beta.20",
-    "@tsconfig/docusaurus": "1.0.6",
-    "autoprefixer": "10.4.7",
-    "postcss": "8.4.14",
-    "postcss-import": "14.1.0",
-    "postcss-preset-env": "7.7.2",
-    "tailwindcss": "3.1.4",
-    "typescript": "4.7.4"
+    "@docusaurus/module-type-aliases": "2.1.0",
+    "@tsconfig/docusaurus": "^1.0.5",
+    "typescript": "^4.7.4"
   },
   "browserslist": {
     "production": [
@@ -48,5 +44,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "engines": {
+    "node": ">=16.14"
   }
 }
