@@ -1,3 +1,4 @@
+/* eslint-disable */
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
@@ -17,15 +18,25 @@ const config = {
   organizationName: 'morintd', // Usually your GitHub org/user name.
   projectName: 'react-breeze', // Usually your repo name.
   plugins: [path.resolve(__dirname, 'plugins/docusaurus-tailwindcss.js')],
+
+  // Even if you don't use internalization, you can use this field to set useful
+  // metadata like html lang. For example, if your site is Chinese, you may want
+  // to replace "en" with "zh-Hans".
+  i18n: {
+    defaultLocale: 'en',
+    locales: ['en'],
+  },
+
   presets: [
     [
-      '@docusaurus/preset-classic',
+      'classic',
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          // Please change this to your repo.
-          editUrl: 'https://github.com/facebook/docusaurus/edit/main/website/',
+        },
+        blog: {
+          showReadingTime: true,
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),

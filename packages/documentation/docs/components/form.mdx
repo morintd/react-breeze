@@ -67,7 +67,7 @@ export const InputRefExample = () => {
   return (
     <div>
       <Form.Input ref={ref} />
-      <Button className="mb-2" onClick={() => ref.current.focus()}>
+      <Button className="mb-2" color="blue" onClick={() => ref.current.focus()}>
         Focus
       </Button>
     </div>
@@ -84,6 +84,7 @@ const ref = useRef(null);
 <Form.Input ref={ref} />
 <Button onClick={() => ref.current.focus()}>Focus</Button>
 ```
+
 <Title as="h3">Label</Title>
 
 Label is used to display a `label`, with a corrected style.
@@ -98,10 +99,10 @@ Group is used to set ids for label & linked input.
 
 Input takes the same properties as an, but can also be given:
 
-| Name    | Type                      | Default     | Description                       |
-| ------- | ------------------------- | ----------- | --------------------------------- |
-| error   | `undefined` \| `boolean`  | `false`     | Display error                     |
-| onEnter | `undefined` \| `Function` | `undefined` | Trigger when user press Enter key |
+| Name    | Type       | Default     | Required | Description                       |
+| ------- | ---------- | ----------- | -------- | --------------------------------- |
+| error   | `boolean`  | `false`     |          | Display error                     |
+| onEnter | `Function` | `undefined` |          | Trigger when user press Enter key |
 
 <Title as="h4">Label</Title>
 
@@ -111,7 +112,7 @@ Input takes the same properties as a `label`.
 
 Group takes the following properties:
 
-| Name     | Type                     | Default     | Description                          |
-| -------- | ------------------------ | ----------- | ------------------------------------ |
-| id       | string                   | `undefined` | Assign `id` & `for` to label & input |
-| children | Component                | `undefined` | Components to be linked together     |
+| Name     | Type        | Default     | Required     | Description                          |
+| -------- | ----------- | ----------- | ------------ | ------------------------------------ |
+| id       | `string`    | `undefined` | **required** | Assign `id` & `for` to label & input |
+| children | `Component` | `undefined` | **required** | Components to be linked together     |

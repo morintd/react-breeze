@@ -1,88 +1,17 @@
+const { generateSafelist } = require('react-breeze');
+
+const safelist = generateSafelist(['primary', 'secondary', 'info', 'success', 'info', 'warning', 'danger', 'blue', 'red']);
+
 module.exports = {
-  purge: [],
-  darkMode: false,
+  content: ['./src/**/*.{html,js,tsx}', './docs/**/*.mdx', '../react-breeze/**/*.tsx'],
   theme: {
     extend: {
       colors: {
-        light: {
-          DEFAULT: '#fff',
-          600: '#e6e6e6',
-          700: '#cccccc',
+        red: {
+          inverted: '#ffffff',
         },
-        dark: {
-          DEFAULT: '#d6d8d9',
-        },
-        primary: {
-          50: '#e7f1ff',
-          100: '#cfe2ff',
-          200: '#9ec5fe',
-          300: '#6ea8fe',
-          400: '#3d8bfd',
-          DEFAULT: '#0d6efd',
-          600: '#0a58ca',
-          700: '#084298',
-          800: '#052c65',
-          900: '#031633',
-        },
-        secondary: {
-          50: '#f0f1f2',
-          100: '#e2e3e5',
-          200: '#c4c8cb',
-          300: '#a7acb1',
-          400: '#899197',
-          DEFAULT: '#6c757d',
-          600: '#565e64',
-          700: '#41464b',
-          800: '#2b2f32',
-          900: '#161719',
-        },
-        success: {
-          50: '#eaf6ec',
-          100: '#d4edda',
-          200: '#a9dcb5',
-          300: '#7eca8f',
-          400: '#53b96a',
-          DEFAULT: '#28a745',
-          600: '#208637',
-          700: '#186429',
-          800: '#10431c',
-          900: '#08210e',
-        },
-        info: {
-          50: '#e8f6f8',
-          100: '#d1ecf1',
-          200: '#a2dae3',
-          300: '#74c7d4',
-          400: '#45b5c6',
-          DEFAULT: '#17a2b8',
-          600: '#128293',
-          700: '#0e616e',
-          800: '#09414a',
-          900: '#052025',
-        },
-        warning: {
-          50: '#fff9e6',
-          100: '#fff3cd',
-          200: '#ffe69c',
-          300: '#ffda6a',
-          400: '#ffcd39',
-          DEFAULT: '#ffc107',
-          600: '#cc9a06',
-          700: '#997404',
-          800: '#664d03',
-          900: '#332701',
-        },
-        danger: {
-          50: '#fcebec',
-          100: '#f8d7da',
-          200: '#f1aeb5',
-          300: '#ea868f',
-          400: '#e35d6a',
-          DEFAULT: '#dc3545',
-          600: '#b02a37',
-          700: '#842029',
-          800: '#58151c',
-          900: '#2c0b0e',
+        blue: {
+          inverted: '#ffffff',
         },
       },
     },
@@ -93,4 +22,5 @@ module.exports = {
     },
   },
   plugins: [],
+  safelist: [...safelist],
 };

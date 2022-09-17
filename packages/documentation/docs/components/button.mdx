@@ -10,66 +10,36 @@ import { Button, Title } from 'react-breeze';
 
 <Title as="h3">Color</Title>
 
-<Button className="mb-2 mr-1">Button (Primary)</Button>
-<Button className="mb-2 mr-1" color="secondary">
-  Button (Secondary)
+<Button className="mb-2 mr-1" color="blue">
+  Button (Blue)
 </Button>
-<Button className="mb-2 mr-1" color="success">
-  Button (Success)
-</Button>
-<Button className="mb-2 mr-1" color="info">
-  Button (Info)
-</Button>
-<Button className="mb-2 mr-1" color="warning">
-  Button (Warning)
-</Button>
-<Button className="mb-2 mr-1" color="danger">
-  Button (Danger)
+<Button className="mb-2 mr-1" color="red">
+  Button (Red)
 </Button>
 
 ```jsx
 import { Button } from 'react-breeze';
 
-<Button>Button (Primary)</Button>
-<Button color="secondary">Button (Primary)</Button>
-<Button color="success">Button (Primary)</Button>
-<Button color="info">Button (Primary)</Button>
-<Button color="warning">Button (Primary)</Button>
-<Button color="danger">Button (Primary)</Button>
+<Button color="blue">Button (Blue)</Button>
+<Button color="red">Button (Red)</Button>
 ```
 
 <Title as="h3">Outline</Title>
 
 Buttons can have a different appearance if they're outlined.
 
-<Button outline className="mb-2 mr-1">
-  Button (Primary)
+<Button outline className="mb-2 mr-1" color="blue">
+  Button (Blue)
 </Button>
-<Button outline className="mb-2 mr-1" color="secondary">
-  Button (Secondary)
-</Button>
-<Button outline className="mb-2 mr-1" color="success">
-  Button (Success)
-</Button>
-<Button outline className="mb-2 mr-1" color="info">
-  Button (Info)
-</Button>
-<Button outline className="mb-2 mr-1" color="warning">
-  Button (Warning)
-</Button>
-<Button outline className="mb-2 mr-1" color="danger">
-  Button (Danger)
+<Button outline className="mb-2 mr-1" color="red">
+  Button (Red)
 </Button>
 
 ```jsx
 import { Button } from 'react-breeze';
 
-<Button outline>Button (Primary)</Button>
-<Button outline color="secondary">Button (Primary)</Button>
-<Button outline color="success">Button (Primary)</Button>
-<Button outline color="info">Button (Primary)</Button>
-<Button outline color="warning">Button (Primary)</Button>
-<Button outline color="danger">Button (Primary)</Button>
+<Button outline color="blue">Button (Blue)</Button>
+<Button outline color="red">Button (Red)</Button>
 ```
 
 <Title as="h3">Loading</Title>
@@ -77,62 +47,30 @@ import { Button } from 'react-breeze';
 Buttons can display a loader, useful when working with async actions (default or outline).
 
 <div>
-  <Button loading className="mb-2 mr-1">
-    Button (Primary)
+  <Button loading className="mb-2 mr-1" color="blue">
+    Button (Blue)
   </Button>
-  <Button loading className="mb-2 mr-1" color="secondary">
-    Button (Secondary)
-  </Button>
-  <Button loading className="mb-2 mr-1" color="success">
-    Button (Success)
-  </Button>
-  <Button loading className="mb-2 mr-1" color="info">
-    Button (Info)
-  </Button>
-  <Button loading className="mb-2 mr-1" color="warning">
-    Button (Warning)
-  </Button>
-  <Button loading className="mb-2 mr-1" color="danger">
-    Button (Danger)
+  <Button loading className="mb-2 mr-1" color="red">
+    Button (Red)
   </Button>
 </div>
 <div>
-  <Button outline loading className="mb-2 mr-1">
-    Button (Primary)
+  <Button outline loading className="mb-2 mr-1" color="blue">
+    Button (Blue)
   </Button>
-  <Button outline loading className="mb-2 mr-1" color="secondary">
-    Button (Secondary)
-  </Button>
-  <Button outline loading className="mb-2 mr-1" color="success">
-    Button (Success)
-  </Button>
-  <Button outline loading className="mb-2 mr-1" color="info">
-    Button (Info)
-  </Button>
-  <Button outline loading className="mb-2 mr-1" color="warning">
-    Button (Warning)
-  </Button>
-  <Button outline loading className="mb-2 mr-1" color="danger">
-    Button (Danger)
+  <Button outline loading className="mb-2 mr-1" color="red">
+    Button (Red)
   </Button>
 </div>
 
 ```jsx
 import { Button } from 'react-breeze';
 
-<Button loading>Button (Primary)</Button>
-<Button loading color="secondary">Button (Secondary)</Button>
-<Button loading color="success">Button (Success)</Button>
-<Button loading color="info">Button (Info)</Button>
-<Button loading color="warning">Button (Warning)</Button>
-<Button loading color="danger">Button (Danger)</Button>
+<Button loading color="blue">Button (Blue)</Button>
+<Button loading color="red">Button (Red)</Button>
 
-<Button outline loading>Button (Primary)</Button>
-<Button outline loading color="secondary">Button (Secondary)</Button>
-<Button outline loading color="success">Button (Success)</Button>
-<Button outline loading color="info">Button (Info)</Button>
-<Button outline loading color="warning">Button (Warning)</Button>
-<Button outline loading color="danger">Button (Danger)</Button>
+<Button outline loading color="blue">Button (Blue)</Button>
+<Button outline loading color="red">Button (Red)</Button>
 ```
 
 <Title as="h3">Disabled</Title>
@@ -140,71 +78,39 @@ import { Button } from 'react-breeze';
 Buttons can have a disabled state, used to indicate they cannot be clicked (default or outline).
 
 <div>
-  <Button disabled className="mb-2 mr-1">
-    Button (Primary)
+  <Button disabled className="mb-2 mr-1" color="blue">
+    Button (Blue)
   </Button>
-  <Button disabled className="mb-2 mr-1" color="secondary">
-    Button (Secondary)
-  </Button>
-  <Button disabled className="mb-2 mr-1" color="success">
-    Button (Success)
-  </Button>
-  <Button disabled className="mb-2 mr-1" color="info">
-    Button (Info)
-  </Button>
-  <Button disabled className="mb-2 mr-1" color="warning">
-    Button (Warning)
-  </Button>
-  <Button disabled className="mb-2 mr-1" color="danger">
-    Button (Danger)
+  <Button disabled className="mb-2 mr-1" color="red">
+    Button (Red)
   </Button>
 </div>
 <div>
-  <Button disabled outline className="mb-2 mr-1">
-    Button (Primary)
+  <Button disabled outline className="mb-2 mr-1" color="blue">
+    Button (Blue)
   </Button>
-  <Button disabled outline className="mb-2 mr-1" color="secondary">
-    Button (Primary)
-  </Button>
-  <Button disabled outline className="mb-2 mr-1" color="success">
-    Button (Primary)
-  </Button>
-  <Button disabled outline className="mb-2 mr-1" color="info">
-    Button (Primary)
-  </Button>
-  <Button disabled outline className="mb-2 mr-1" color="warning">
-    Button (Primary)
-  </Button>
-  <Button disabled outline className="mb-2 mr-1" color="danger">
-    Button (Primary)
+  <Button disabled outline className="mb-2 mr-1" color="red">
+    Button (Red)
   </Button>
 </div>
 
 ```jsx
 import { Button } from 'react-breeze';
 
-<Button disabled>Button (Primary)</Button>
-<Button disabled color="secondary">Button (Primary)</Button>
-<Button disabled color="success">Button (Primary)</Button>
-<Button disabled color="info">Button (Primary)</Button>
-<Button disabled color="warning">Button (Primary)</Button>
-<Button disabled color="danger">Button (Primary)</Button>
+<Button disabled color="blue">Button (Blue)</Button>
+<Button disabled color="red">Button (Red)</Button>
 
-<Button outline disabled>Button (Primary)</Button>
-<Button outline disabled color="secondary">Button (Primary)</Button>
-<Button outline disabled color="success">Button (Primary)</Button>
-<Button outline disabled color="info">Button (Primary)</Button>
-<Button outline disabled color="warning">Button (Primary)</Button>
-<Button outline disabled color="danger">Button (Primary)</Button>
+<Button outline disabled color="blue">Button (Blue)</Button>
+<Button outline disabled color="red">Button (Red)</Button>
 ```
 
 **Properties**
 
 Button takes the same properties as a `button`, but can also be given:
 
-| Name     | Type                                                                                 | Default     | Description                                     |
-| -------- | ------------------------------------------------------------------------------------ | ----------- | ----------------------------------------------- |
-| color    | `undefined` \| `'secondary'` \| `'success'` \| `'info'` \| `'warning'` \| `'danger'` | `undefined` | Set color                                       |
-| outline  | boolean                                                                              | `false`     | Alternative appearance                          |
-| loading  | boolean                                                                              | `false`     | Show a loader instead of `children`             |
-| disabled | boolean                                                                              | `false`     | Change appearance and doesn't trigger `onClick` |
+| Name     | Type      | Default     | Required     | Description                                     |
+| -------- | --------- | ----------- | ------------ | ----------------------------------------------- |
+| color    | `string`  | `undefined` | **required** | Set color                                       |
+| outline  | `boolean` | `false`     |              | Alternative appearance                          |
+| loading  | `boolean` | `false`     |              | Show a loader instead of `children`             |
+| disabled | `boolean` | `false`     |              | Change appearance and doesn't trigger `onClick` |
