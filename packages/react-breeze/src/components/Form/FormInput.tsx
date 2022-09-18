@@ -1,6 +1,8 @@
 import React, { DetailedHTMLProps, forwardRef, InputHTMLAttributes, KeyboardEvent, useCallback } from 'react';
 import cn from 'classnames';
 
+import { Color } from '../../types';
+
 type InputColors = [string] | [string, string] | [string, string, string];
 
 type Props = {
@@ -9,7 +11,7 @@ type Props = {
   colors?: InputColors;
 } & DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>;
 
-const defaultColors = ['gray', 'blue', 'red'];
+const defaultColors: InputColors = [Color.Gray, Color.Blue, Color.Red];
 
 const FormInput = (props: Props, ref: React.ForwardedRef<HTMLInputElement>) => {
   const { colors = defaultColors, error, className, onKeyPress, onEnter, ...others } = props;

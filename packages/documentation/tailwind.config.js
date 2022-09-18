@@ -1,6 +1,6 @@
 const { generateSafelist } = require('react-breeze');
 
-const safelist = generateSafelist(['primary', 'secondary', 'info', 'success', 'info', 'warning', 'danger', 'blue', 'red']);
+const safelist = generateSafelist(['blue', 'red']);
 
 module.exports = {
   content: ['./src/**/*.{html,js,tsx}', './docs/**/*.mdx', '../react-breeze/**/*.tsx'],
@@ -22,5 +22,5 @@ module.exports = {
     },
   },
   plugins: [],
-  safelist: [...safelist],
+  safelist,
 };
