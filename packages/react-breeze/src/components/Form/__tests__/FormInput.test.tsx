@@ -32,7 +32,7 @@ describe('Form.Input', () => {
     );
 
     userEvent.type(screen.getByLabelText('mock-label'), 'foo');
-    expect(screen.getByLabelText('mock-label')).toHaveClass('border-red-300');
+    expect(screen.getByLabelText('mock-label')).toHaveClass('border-danger-100');
   });
 
   test('Should call onEnter when Enter key is pressed', () => {
