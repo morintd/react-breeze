@@ -67,7 +67,7 @@ export const InputRefExample = () => {
   return (
     <div>
       <Form.Input ref={ref} />
-      <Button className="mb-2" color="blue" onClick={() => ref.current.focus()}>
+      <Button className="mb-2" onClick={() => ref.current.focus()}>
         Focus
       </Button>
     </div>

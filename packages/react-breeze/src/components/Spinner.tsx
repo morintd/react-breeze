@@ -1,23 +1,25 @@
 import React, { DetailedHTMLProps, HTMLAttributes } from 'react';
 import cn from 'classnames';
 
+import { InvertColorVariants, ColorVariants } from '../types';
+
 type Props = {
-  color: string;
-  inverted?: boolean;
+  color?: ColorVariants | InvertColorVariants;
 } & DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
 
 function Spinner(props: Props) {
-  const { className, color, inverted, ...others } = props;
+  const { className, color = 'primary', ...others } = props;
   const classnames = cn(className, 'h-6 w-6 flex items-center content-center');
-
-  const svgClassnames = cn(`animate-spin h-5 w-5 inline `, {
-    [`text-${color}-500`]: !inverted,
-    [`text-${color}-inverted`]: inverted,
-  });
 
   return (
     <div {...others} className={classnames}>
-      <svg role="status" className={svgClassnames} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 25 25">
+      <svg
+        role="status"
+        className={`animate-spin h-5 w-5 inline text-${color}-500`}
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 25 25"
+      >
         <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
         <path
           className="opacity-75"

@@ -10,43 +10,56 @@ import { Alert, Title } from 'react-breeze';
 
 <Title as="h3">Color</Title>
 
-<Alert className="mb-2" color="blue">
-  Alert (Blue)
+<Alert className="mb-2">Alert (Primary)</Alert>
+<Alert className="mb-2" color="secondary">
+  Alert (Secondary)
 </Alert>
-<Alert className="mb-2" color="red">
-  Alert (Red)
+<Alert className="mb-2" color="success">
+  Alert (Success)
+</Alert>
+<Alert className="mb-2" color="info">
+  Alert (Info)
+</Alert>
+<Alert className="mb-2" color="warning">
+  Alert (Warning)
+</Alert>
+<Alert className="mb-2" color="danger">
+  Alert (Danger)
 </Alert>
 
-```jsx
-import { Alert } from 'react-breeze';
+```jsx import {Alert} from 'react-breeze';
 
-<Alert color="blue">Alert (Blue)</Alert>
-<Alert color="red">Alert (Red)</Alert>
+<Alert>Alert (Primary)</Alert>
+<Alert color="secondary">Alert (Secondary)</Alert>
+<Alert color="success"> Alert (Success)</Alert>
+<Alert color="info">Alert (Info)</Alert>
+<Alert color="warning">Alert (Warning)</Alert>
+<Alert color="danger">Alert (Danger)</Alert>
 ```
 
 <Title as="h3">Visibility</Title>
 
 An alert can be displayed and hidden thanks to a `visible` property. It takes as much space when invisible:
 
-<Alert className="mb-2" color="blue">
-  Alert (Blue)
+<Alert className="mb-2" color="primary">
+  Alert (Primary)
 </Alert>
-<Alert className="mb-2" color="red" visible={false}>
-  Alert (Red)
+<Alert className="mb-2" color="secondary" visible={false}>
+  Alert (Secondary)
 </Alert>
 
 ```jsx
 import { Alert } from 'react-breeze';
 
-<Alert color="blue">Alert (Blue)</Alert>
-<Alert color="red" visible={false}>Alert (Red)</Alert>
+<Alert>Alert (Primary)</Alert>
+<Alert color="secondary" visible={false}>Alert (Secondary)</Alert>
 ```
 
 **Properties**
 
 Alert takes the same properties as a `div`, but can also be given:
 
-| Name    | Type      | Default     | Required     | Description    |
-| ------- | --------- | ----------- | ------------ | -------------- |
-| color   | `string`  | `undefined` | **required** | Set color      |
-| visible | `boolean` | `true`      |              | Display / hide |
+| Name    | Type                                                                     | Default   | Required | Description    |
+| ------- | ------------------------------------------------------------------------ | --------- | -------- | -------------- |
+| color   | `primary` \| `secondary` \| `success` \| `info` \| `warning` \| `danger` | `primary` |          | Set color      |
+| visible | `boolean`                                                                | `true`    |          | Display / hide |

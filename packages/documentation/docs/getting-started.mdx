@@ -36,7 +36,7 @@ _tailwind.config.js_
 
 ```js
 module.exports = {
-  content: ['./src/**/*.{html,js}'],
+  content: ['./src/**/*.{html,js}', './node_modules/react-breeze/**/*.js'],
   theme: {
     extend: {},
   },
@@ -49,35 +49,33 @@ module.exports = {
 };
 ```
 
-<Title as="h3">Step 2: colors and safe list</Title>
+<Title as="h3">Step 2: colors</Title>
 
-Components in react-breeze work by passing them a color ([default color palette](https://tailwindcss.com/docs/customizing-colors)):
+Components in react-breeze work by passing them a color intent (`primary`, `secondary`, `success`, `info`, `warning` and `danger`) and in some cases two bonus colors (`light` and `dark`).
 
 ```jsx
 import { Button } from 'react-breeze';
 
-<Button color="blue">Button (blue)</Button>
-<Button color="red">Button (red)</Button>
+<Button>Button (Primary by default)</Button>
+<Button color="secondary">Button (Secondary)</Button>
 ```
 
-<Button className="mb-2 mr-1" color="blue">
-  Button (blue)
-</Button>
-<Button className="mb-2 mr-1" color="red">
-  Button (red)
+<Button className="mb-2 mr-1">Button (Primary by default)</Button>
+<Button className="mb-2 mr-1" color="secondary">
+  Button (Secondary)
 </Button>
 
-Classnames using those colors are generated dynamically, which means they will be removed from the CSS at build time. In order to work, react-breeze makes use of the [safelist](https://tailwindcss.com/docs/content-configuration#safelisting-classes) property inside `tailwind.config.js`.
-
-React-breeze comes with an utility function `generateSafelist`. It generates all the classnames that shouldn't be removed, and simply needs the list of color you plan to use:
+Those colors must be added to the `theme` -> `extends` -> `colors` object inside `tailwind.config.js`. For ease of use, `react-breeze` provide a function to generate them:
 
 ```js
-const { generateSafelist } = require('react-breeze');
+const { generateColors } = require('react-breeze');
 
 module.exports = {
-  content: ['./src/**/*.{html,js}'],
+  content: ['./src/**/*.{html,js}', './node_modules/react-breeze/**/*.js'],
   theme: {
-    extend: {},
+    extend: {
+      colors: generateColors(),
+    },
   },
   variants: {
     extend: {
@@ -85,29 +83,26 @@ module.exports = {
     },
   },
   plugins: [],
-  safelist: generateSafelist(['blue', 'red']),
 };
 ```
 
-<Title as="h3">Step 3: add inverted variant</Title>
-
-Some components need an `inverted` variant, used for example in the button text color. In the example from _step 2_, this variant has been set to white (`#ffffff`).
-
-You have to set this variant for every used color:
+While a default color palette is used by `generateColors`, you can define your own colors for each intent:
 
 ```js
+const { generateColors } = require('react-breeze');
+
 module.exports = {
-  content: ['./src/**/*.{html,js}'],
+  content: ['./src/**/*.{html,js}', './node_modules/react-breeze/**/*.js'],
   theme: {
     extend: {
-      colors: {
-        red: {
-          inverted: '#ffffff',
-        },
-        blue: {
-          inverted: '#ffffff',
-        },
-      },
+      colors: generateColors({
+        primary: '#0d6efd',
+        secondary: '#6c757d',
+        info: '#17a2b8',
+        success: '#28a745',
+        warning: '#ffc107',
+        danger: '#dc3545',
+      }),
     },
   },
   variants: {
@@ -116,149 +111,35 @@ module.exports = {
     },
   },
   plugins: [],
-  safelist: generateSafelist(['blue', 'red']),
+};
+```
+
+(Tailwind use a shade system, which will be handled by `generateColor`, using the given color as the middle (`500`/`DEFAULT`) value)
+
+<Title as="h3">Step 3: safelist</Title>
+
+Classnames using those colors are generated dynamically, which means that some will be removed from the CSS at build time. In order to work, react-breeze makes use of the [safelist](https://tailwindcss.com/docs/content-configuration#safelisting-classes) property inside `tailwind.config.js`.
+
+React-breeze comes with an utility function `generateSafelist`. It generates all the classnames that shouldn't be removed:
+
+```js
+const { generateColors } = require('react-breeze');
+
+module.exports = {
+  content: ['./src/**/*.{html,js}', './node_modules/react-breeze/**/*.js'],
+  theme: {
+    extend: {
+      colors: generateColors(),
+    },
+  },
+  variants: {
+    extend: {
+      backgroundColor: ['active'],
+    },
+  },
+  plugins: [],
+  safelist: generateSafelist(),
 };
 ```
 
 That's it, you're good to go! <a href="/docs/components/alert">Explore components</a>
-
-<Title as="h3">Optional</Title>
-
-<Title as="h4">Design system</Title>
-
-The previous steps are enough to get you started. On the other hand, I have one advice that comes from experience.
-
-Using **raw colors** (`blue`, `red`, ..) everywhere, will make your app more prone to errors, and harder to maintain as time goes on.
-
-Instead, you can use colors that show **intent**. For example, you can build a design system based on:
-
-| Intent (name) | color (value) |
-| ------------- | ------------- |
-| Primary       | Blue          |
-| Secondary     | Grey          |
-| Success       | Green         |
-| Info          | Light Blue    |
-| Warning       | Orange        |
-| Danger        | Red           |
-
-```js
-module.exports = {
-  content: ['./src/**/*.{html,js}'],
-  theme: {
-    extend: {
-      colors: {
-        primary: {
-          50: '#e7f1ff',
-          100: '#cfe2ff',
-          200: '#9ec5fe',
-          300: '#6ea8fe',
-          400: '#3d8bfd',
-          500: '#0d6efd',
-          600: '#0a58ca',
-          700: '#084298',
-          800: '#052c65',
-          900: '#031633',
-          inverted: '#ffffff',
-        },
-        secondary: {
-          50: '#f0f1f2',
-          100: '#e2e3e5',
-          200: '#c4c8cb',
-          300: '#a7acb1',
-          400: '#899197',
-          500: '#6c757d',
-          600: '#565e64',
-          700: '#41464b',
-          800: '#2b2f32',
-          900: '#161719',
-          inverted: '#ffffff',
-        },
-        success: {
-          50: '#eaf6ec',
-          100: '#d4edda',
-          200: '#a9dcb5',
-          300: '#7eca8f',
-          400: '#53b96a',
-          500: '#28a745',
-          600: '#208637',
-          700: '#186429',
-          800: '#10431c',
-          900: '#08210e',
-          inverted: '#ffffff',
-        },
-        info: {
-          50: '#e8f6f8',
-          100: '#d1ecf1',
-          200: '#a2dae3',
-          300: '#74c7d4',
-          400: '#45b5c6',
-          500: '#17a2b8',
-          600: '#128293',
-          700: '#0e616e',
-          800: '#09414a',
-          900: '#052025',
-          inverted: '#ffffff',
-        },
-        warning: {
-          50: '#fff9e6',
-          100: '#fff3cd',
-          200: '#ffe69c',
-          300: '#ffda6a',
-          400: '#ffcd39',
-          500: '#ffc107',
-          600: '#cc9a06',
-          700: '#997404',
-          800: '#664d03',
-          900: '#332701',
-          inverted: '#ffffff',
-        },
-        danger: {
-          50: '#fcebec',
-          100: '#f8d7da',
-          200: '#f1aeb5',
-          300: '#ea868f',
-          400: '#e35d6a',
-          500: '#dc3545',
-          600: '#b02a37',
-          700: '#842029',
-          800: '#58151c',
-          900: '#2c0b0e',
-          inverted: '#ffffff',
-        },
-      },
-    },
-  },
-  variants: {
-    extend: {
-      backgroundColor: ['active'],
-    },
-  },
-  plugins: [],
-  safelist: generateSafelist(['primary', 'secondary', 'info', 'success', 'info', 'warning', 'danger']),
-};
-```
-
-<Title as="h4">Color definition</Title>
-
-Instead of passing a color string to components (`color="blue"`, `color="red"`), which is also error-prone, you can define an object that stores the available colors.
-
-With TypeScript, an enum does an amazing job:
-
-```tsx
-enum Color {
-  Primary = 'primary',
-  Secondary = 'secondary',
-  Success = 'success',
-  Info = 'info',
-  Warning = 'warning',
-  Danger = 'danger',
-}
-
-<Button color={Color.Primary}>Button</Button>;
-```
-
-<Button className="mb-2 mr-1" color="blue">
-  Button
-</Button>
-
-_(Feel free to change those colors.)_

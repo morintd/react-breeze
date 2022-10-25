@@ -1,19 +1,13 @@
-const { generateSafelist } = require('react-breeze');
+const { generateSafelist, generateColors } = require('react-breeze');
 
-const safelist = generateSafelist(['blue', 'red']);
+const safelist = generateSafelist();
+const colors = generateColors();
 
 module.exports = {
   content: ['./src/**/*.{html,js,tsx}', './docs/**/*.mdx', '../react-breeze/**/*.tsx'],
   theme: {
     extend: {
-      colors: {
-        red: {
-          inverted: '#ffffff',
-        },
-        blue: {
-          inverted: '#ffffff',
-        },
-      },
+      colors,
     },
   },
   variants: {
