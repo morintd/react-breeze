@@ -8,25 +8,24 @@ import { Spinner, Alert } from 'react-breeze';
 
 A spinner tells the user an action is still being executed.
 
-<Alert className="mb-2" color="blue">
-  <Spinner color="blue" inverted />
+<Alert className="mb-2">
+  <Spinner color="light" />
 </Alert>
-<Spinner color="red" />
+<Spinner />
 
 ```jsx
 import { Alert, Spinner } from 'react-breeze';
 
-<Alert color="blue">
-  <Spinner color="blue" inverted />
+<Alert>
+  <Spinner color="light" />
 </Alert>
-<Spinner color="red" />
+<Spinner />
 ```
 
 **Properties**
 
 Spinner takes the same properties as a `div`, as well as:
 
-| Name     | Type      | Default     | Required     | Description                                |
-| -------- | --------- | ----------- | ------------ | ------------------------------------------ |
-| color    | `string`  | `undefined` | **required** | Define spinner color                       |
-| inverted | `boolean` | `false`     |              | Use given color inverted variation instead |
+| Name  | Type                                                                     | Default   | Required | Description |
+| ----- | ------------------------------------------------------------------------ | --------- | -------- | ----------- |
+| color | `primary` \| `secondary` \| `success` \| `info` \| `warning` \| `danger` | `primary` |          | Set color   |
