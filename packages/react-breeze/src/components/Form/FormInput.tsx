@@ -24,7 +24,7 @@ const FormInput = (props: Props, ref: React.ForwardedRef<HTMLInputElement>) => {
 
   const classnames = cn(className, 'outline-none border rounded py-1.5 px-3 block focus:border-primary-500', {
     [`border-dark-100`]: !error,
-    [`border-danger-100`]: error,
+    [`border-danger-300`]: error,
   });
 
   return <input ref={ref} {...others} className={classnames} onKeyPress={handleKeyPress} />;
