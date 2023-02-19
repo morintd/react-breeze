@@ -10,8 +10,7 @@ type Props = {
 } & DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement>;
 
 function Alert(props: Props) {
-  const { color, className, visible = true, ...others } = props;
-  // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+  const { color = 'primary', className, visible = true, ...others } = props;
   const classnames = cn(className, `py-1.5 px-3 border rounded bg-${color}-100 text-${color}-800 border-${color}-200`, {
     'opacity-0': !visible,
   });
